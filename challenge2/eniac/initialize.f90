@@ -1,4 +1,5 @@
 SUBROUTINE initialize(s,t,v,r,f,h,z,zeta,eta)
+  IMPLICIT none
 
   INCLUDE "grid.inc"
 
@@ -7,7 +8,6 @@ SUBROUTINE initialize(s,t,v,r,f,h,z,zeta,eta)
 !      these values were on punched cards recycled through the system
   REAL s(0:p,0:p), t(0:q,0:q), v(0:p,0:q)
   REAL r(0:p,0:q), f(0:p,0:q), h(0:p,0:q)
-  REAL a(0:p,0:q)
   
 !  Declare data, physical info.
   REAL z(0:p,0:q), zeta(0:p,0:q), eta(0:p,0:q)
@@ -29,7 +29,6 @@ SUBROUTINE initialize(s,t,v,r,f,h,z,zeta,eta)
   f = 0.
   zeta = 0.0
   eta  = 0.0
-  a = 0.0
   
 
   PRINT *,SECOND()*1000.,' ms'
@@ -54,7 +53,10 @@ SUBROUTINE initialize(s,t,v,r,f,h,z,zeta,eta)
     ENDDO
   ENDDO
    
-! metric 
+! metric -- 
+! the nondimensionalized r = cos(phi)/(1+sin(phi)) where phi = latitude
+!    and r**2 = (x-xp)**2 + (y-yp)**2
+! f, h address the mapping/magnification factor
   f = (1.-r)/(1.+r)
   h = g/(2*omega*ds)**2 * (1.+r)**3 / (1.-r) 
 

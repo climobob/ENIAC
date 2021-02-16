@@ -2,7 +2,7 @@
   INTEGER p, q, n, ip, jp
   PARAMETER (p = 18)
   PARAMETER (q = 15)
-  PARAMETER (ip = 9)
+  PARAMETER (ip = 9)   ! i,j location of the pole for stereographic projection
   PARAMETER (jp = 13)
   PARAMETER (n = 24)   ! number of time steps per day
 

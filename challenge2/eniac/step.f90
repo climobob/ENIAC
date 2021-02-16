@@ -1,11 +1,12 @@
-SUBROUTINE step(s,t,v,r,f,h,z,zeta,eta, k)
+SUBROUTINE step(s,t,v,f,h,z,zeta,eta, k)
 ! carry forward 1 time step
+  IMPLICIT none
 
   INCLUDE "grid.inc"
 
 ! grid and other fixed information:
   REAL s(0:p,0:p), t(0:q,0:q), v(0:p,0:q)
-  REAL r(0:p,0:q), f(0:p,0:q), h(0:p,0:q)
+  REAL f(0:p,0:q), h(0:p,0:q)
 !  Declare data, physical info.
   REAL z(0:p,0:q), zeta(0:p,0:q), eta(0:p,0:q)
   
