@@ -12,5 +12,10 @@ Challenge2 permits updates along the boundary, which will come from
 
 Reduced grib2 and netcdf files will be available at https://grumbinescience.org/ once there's an interest
 
+for testing purposes, a program (ic.f90) and text output original_eniac_ic.txt 
+  are in directory initial_conditions. 
+
+The sample general ENIAC forecast model is in directory eniac
+
 Robert Grumbine
 15 February 2021
