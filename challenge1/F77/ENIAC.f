@@ -298,7 +298,7 @@ CD      WRITE (*,9002)
       WRITE (1,9002)
  9001 FORMAT (16F7.2)
  9002 FORMAT (' ')
- 9003 FORMAT ('k = ',I3)
+ 9003 FORMAT (I3)
       
  2000 CONTINUE
       PRINT *,SECOND()*1000.,' ms'

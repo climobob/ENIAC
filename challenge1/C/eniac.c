@@ -107,20 +107,20 @@ C    This file is not comparable to anything in the original program. */
 /*    Prepare the data decks - used due to memory constraints */
     for (i = 1; i <= p-1; i++) {
       for (l = 1; l <= p-1; l++) {
-        s[l][i] = sin(pi*i*l/p);  
+        s[l][i] = sin(pi*i*l/(float) p);  
       }
     }
    
      for (j = 1; j <= q-1; j++) {
        for (m = 1; m <= q-1; m++) {
-         t[m][j] = sin(pi*m*j/q);  
+         t[m][j] = sin(pi*m*j/(float) q);  
        }
      }
    
      for (i = 0; i <= p; i++) {
        for (j = 0;j <= q; j++) {
-         v[i][j] = p*q*(sin(pi*i/(2*p))*sin(pi*i/(2*p))
-                      + sin(pi*j/(2*q))*sin(pi*j/(2*q)) );  
+         v[i][j] = p*q*(sin(pi*i/(2*(float) p))*sin(pi*i/(2*(float) p))
+                      + sin(pi*j/(2*(float) q))*sin(pi*j/(2*(float) q)) );  
        }
      }
    
@@ -140,7 +140,7 @@ C    This file is not comparable to anything in the original program. */
      for (i = 0; i <= p; i++) {
         for (j = 0; j <= q; j++) {
           h[i][j] = g/(2*omega*ds)/(2*omega*ds) 
-               * (1+r[i][j])*(1+r[i][j])*(1+r[i][j])/(1.-r[i][j]);  
+               * (1+r[i][j])*(1+r[i][j])*(1+r[i][j]) / (1.-r[i][j]);  
         }
      }
 
@@ -292,7 +292,7 @@ C    This file is not comparable to anything in the original program. */
          zeta[i][0] = zeta[i][0]; 
       }
 
-      if (z[i+1][q] > z[i+1][q]) {
+      if (z[i+1][q] > z[i-1][q]) {
          z[i][q]    = z[i][q];
          zeta[i][q] = 2.*zeta[i][q-1]-zeta[i][q-2]; 
       }
