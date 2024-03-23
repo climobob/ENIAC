@@ -169,7 +169,8 @@ C    This file is not comparable to anything in the original program. */
 /*     END OF THE PRELIMINARY SET UP SECTION
     BEGIN THE ITERATIVE SOLUTION OF THE EQUATIONS             */
 
-    for ( k = 0; k <= 3*n-1; k++) {
+    //for ( k = 0; k <= 3*n-1; k++) {
+    for ( k = 0; k <= 60; k++) {
     
       for (j = 1; j <= q-1; j++) {
         for (i = 1; i <= p-1; i++) {
