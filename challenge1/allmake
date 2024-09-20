@@ -1,0 +1,10 @@
+#!/bin/sh
+
+base=`pwd`
+for d in check C F77 F90
+do
+  cd $d
+  make
+  cd $base
+done
+

@@ -161,7 +161,8 @@ C      Prepare the data decks - used due to memory constraints
 C     END OF THE PRELIMINARY SET UP SECTION
 C***********************************************************!!
 C      BEGIN THE ITERATIVE SOLUTION OF THE EQUATIONS
-      DO 2000 k = 0, 3*n-1
+      !DO 2000 k = 0, 3*n-1
+      DO 2000 k = 0, 60
       
       DO 1010 j = 1, q-1
         DO 1020 i = 1, p-1
@@ -298,7 +299,7 @@ CD      WRITE (*,9002)
       WRITE (1,9002)
  9001 FORMAT (16F7.2)
  9002 FORMAT (' ')
- 9003 FORMAT ('k = ',I3)
+ 9003 FORMAT (I3)
       
  2000 CONTINUE
       PRINT *,SECOND()*1000.,' ms'
